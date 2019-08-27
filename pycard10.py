@@ -191,7 +191,7 @@ class card10Manager(gatt.DeviceManager):
 
     def discover_card10s(self):
         print("Looking for card10s...")
-        manager.start_discovery(['42230100-2342-2342-2342-234223422342', '42230200-2342-2342-2342-234223422342'])
+        self.start_discovery(['42230100-2342-2342-2342-234223422342', '42230200-2342-2342-2342-234223422342'])
 
     def get_card10s(self):
         return [device for device in self.devices() if device.is_card10()]
