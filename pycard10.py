@@ -180,7 +180,7 @@ class card10Manager(gatt.DeviceManager):
         super().__init__(adapter_name)
 
     def device_discovered(self, device):
-        if not device.is_card10():
+        if not device or not device.is_card10():
             return
         print("Discovered [%s] %s" % (device.mac_address, device.alias()))
         if self._device_added_cb:
